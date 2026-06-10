@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Motoristas — GR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+  <script src="../api/api.js"></script>
+</head>
+<body>
+<div class="orb orb1"></div><div class="orb orb2"></div>
+<div class="page">
+  <header>
+    <div class="logo-wrap">
+      <div class="logo-badge">GR</div>
+      <div><div class="logo-text">Motoristas</div><div class="logo-sub">Cadastros e documentos</div></div>
+    </div>
+    
+    <a class="btnVoltar" href="../index.html">← Menu</a>
+  </header>
+  <div class="hero">
+    <span class="hero-label">Gestão de cadastros</span>
+    <h1>Cadastros de Motoristas</h1>
+    <p class="hero-sub">Gerencie CNH, documentos e pendências dos motoristas da frota.</p>
+  </div>
+
+  <!-- ABAS -->
+  <div class="abas-main">
+    <button class="aba-main ativo" data-aba="cadastros">👤 Cadastros</button>
+    <button class="aba-main" data-aba="alertas">🔔 Alertas</button>
+  </div>
+
+  <!-- TELA CADASTROS -->
+  <div id="tela-cadastros">
+    <div class="filtros">
+      <input id="busca" type="text" placeholder="🔍  Buscar por nome ou CPF...">
+      <select id="filtroPendencias">
+        <option value="tudo">Todos os motoristas</option>
+        <option value="pendentes">Com pendências</option>
+        <option value="sem_cnh">Sem CNH</option>
+        <option value="sem_cert">Sem certificado</option>
+        <option value="cnh_vencendo">CNH vencendo</option>
+        <option value="motorista_novo">🆕 Motoristas novos</option>
+      </select>
+      <input id="diasAlerta" type="number" value="10" min="1" max="365" style="max-width:110px" title="Dias para alerta">
+    </div>
+    <div style="display:flex;justify-content:flex-end;margin-bottom:16px">
+      <button id="btnNovo" class="btn btnNovo">+ Novo motorista</button>
+    </div>
+    <div class="layout">
+      <div id="lista" class="lista"></div>
+      <div id="painel" class="painel vazio">Selecione um motorista ou clique em <b>Novo motorista</b>.</div>
+    </div>
+  </div>
+
+  <!-- TELA ALERTAS -->
+  <div id="tela-alertas" style="display:none">
+    <div class="filtros" style="margin-bottom:16px">
+      <select id="filtro-alerta-tipo">
+        <option value="tudo">Todos os tipos</option>
+        <option value="cnh">CNH</option>
+        <option value="opentech">Opentech (DPA / BRF)</option>
+        <option value="comprovante">Comprovante de Endereço</option>
+        <option value="certificado">Certificado Tablet</option>
+        <option value="email">Viagens Opentech</option>
+      </select>
+      <select id="filtro-alerta-viagens">
+        <option value="todos">Todas as viagens</option>
+        <option value="abaixo5">Menos de 5 viagens</option>
+      </select>
+    </div>
+    <div id="alertas-tela"></div>
+  </div>
+
+</div>
+<script src="../api/api.js"></script>
+<script src="motoristas.js"></script>
+</body></html>
