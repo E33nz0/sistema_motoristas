@@ -1,0 +1,14 @@
+# Arquivo de configuração com credenciais reais — NUNCA commitar
+api/config.php
+
+# Arquivos de upload dos usuários
+uploads/motoristas/*.jpg
+uploads/motoristas/*.jpeg
+uploads/motoristas/*.png
+uploads/motoristas/*.pdf
+uploads/motoristas/*.webp
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+*.log
